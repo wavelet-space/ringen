@@ -24,24 +24,19 @@ namespace ringen
     /// The type of elements the ring buffer.
     /// This type must be default-constructible.
     template<std::default_initializable T>
-    
     class ring_buffer
     {
     public:
     
-        /// \brief
         /// The type of elements in the ring buffer.
         typedef T value_type;
         
-        /// \brief
         /// A type that is a reference to a ring buffer element.
         typedef T& reference;
         
-        /// \brief
         /// A type that is a const-reference to a ring buffer element.
         typedef const T& const_reference;
     
-        /// \brief
         /// Constructs a ring buffer of a specified size.
         ///
         /// Allocates the buffer on the heap and default-constructs all
@@ -71,7 +66,6 @@ namespace ringen
             return m_size;
         }
         
-        /// \brief
         /// Obtain a reference to the ring buffer element corresponding to the specified
         /// sequence number.
         ///
@@ -91,7 +85,6 @@ namespace ringen
         }
         
     private:
-
         // Disable copy-construction
         ring_buffer(const ring_buffer&);
     
