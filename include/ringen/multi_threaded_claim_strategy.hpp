@@ -1,16 +1,15 @@
-#ifndef DISRUPTORPLUS_MULTI_THREADED_CLAIM_STRATEGY_HPP_INCLUDED
-#define DISRUPTORPLUS_MULTI_THREADED_CLAIM_STRATEGY_HPP_INCLUDED
+#pragma once
 
-#include <disruptorplus/config.hpp>
-#include <disruptorplus/sequence_barrier.hpp>
-#include <disruptorplus/sequence_barrier_group.hpp>
-#include <disruptorplus/sequence_range.hpp>
+#include <ringen/config.hpp>
+#include <ringen/sequence_barrier.hpp>
+#include <ringen/sequence_barrier_group.hpp>
+#include <ringen/sequence_range.hpp>
 
 #include <atomic>
 #include <chrono>
 #include <memory>
 
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// A claim strategy for slots in a ring buffer where there are multiple
@@ -568,5 +567,3 @@ namespace disruptorplus
         
     };
 }
-
-#endif

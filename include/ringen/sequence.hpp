@@ -1,5 +1,4 @@
-#ifndef DISRUPTORPLUS_SEQUENCE_HPP_INCLUDED
-#define DISRUPTORPLUS_SEQUENCE_HPP_INCLUDED
+#pragma once
 
 #include <atomic>
 #include <algorithm>
@@ -21,7 +20,7 @@
 /// \brief
 /// The \ref disruptorplus namespace provides abstractions that implement the
 /// Disruptor data structure for multi-threaded producer/consumer queues.
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// Integer type used to represent sequence number of an item
@@ -136,5 +135,3 @@ namespace disruptorplus
         return static_cast<sequence_t>(minDelta + minimum);
     }
 }
-
-#endif

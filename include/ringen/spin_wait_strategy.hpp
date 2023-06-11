@@ -1,14 +1,13 @@
-#ifndef DISRUPTORPLUS_SPIN_WAIT_STRATEGY_HPP_INCLUDED
-#define DISRUPTORPLUS_SPIN_WAIT_STRATEGY_HPP_INCLUDED
+#pragma once
 
-#include <disruptorplus/spin_wait.hpp>
-#include <disruptorplus/sequence.hpp>
+#include <ringen/spin_wait.hpp>
+#include <ringen/sequence.hpp>
 
 #include <chrono>
 #include <atomic>
 #include <cassert>
 
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// This wait-strategy busy-waits when waiting for sequences to be
@@ -173,5 +172,3 @@ namespace disruptorplus
     
     };
 }
-
-#endif

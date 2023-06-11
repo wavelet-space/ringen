@@ -3,7 +3,7 @@
 
 #include <cstddef>
 
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// The expected size of a cache-line in bytes.

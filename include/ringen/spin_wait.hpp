@@ -1,5 +1,4 @@
-#ifndef DISRUPTORPLUS_SPIN_WAIT_HPP_INCLUDED
-#define DISRUPTORPLUS_SPIN_WAIT_HPP_INCLUDED
+#pragma once
 
 #include <thread>
 
@@ -7,7 +6,7 @@
 # include <intrin.h>
 #endif
 
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// A helper class for implementing spin-wait loops.
@@ -117,5 +116,3 @@ namespace disruptorplus
     
     };
 }
-
-#endif

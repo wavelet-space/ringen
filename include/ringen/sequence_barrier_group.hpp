@@ -1,14 +1,13 @@
-#ifndef DISRUPTORPLUS_SEQUENCE_BARRIER_GROUP_HPP_INCLUDED
-#define DISRUPTORPLUS_SEQUENCE_BARRIER_GROUP_HPP_INCLUDED
+#pragma once
 
-#include <disruptorplus/sequence.hpp>
-#include <disruptorplus/sequence_barrier.hpp>
+#include <ringen/sequence.hpp>
+#include <ringen/sequence_barrier.hpp>
 
 #include <cassert>
 #include <chrono>
 #include <vector>
 
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// A sequence barrier group holds a collection of sequence barriers
@@ -219,5 +218,3 @@ namespace disruptorplus
     
     };
 }
-
-#endif

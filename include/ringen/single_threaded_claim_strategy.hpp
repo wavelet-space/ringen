@@ -1,17 +1,15 @@
-#ifndef DISRUPTORPLUS_SINGLE_THREADED_CLAIM_STRATEGY_HPP_INCLUDED
-#define DISRUPTORPLUS_SINGLE_THREADED_CLAIM_STRATEGY_HPP_INCLUDED
+#pragma once
 
-#include <disruptorplus/sequence_range.hpp>
-#include <disruptorplus/sequence_barrier.hpp>
-#include <disruptorplus/sequence_barrier_group.hpp>
+#include <ringen/sequence_range.hpp>
+#include <ringen/sequence_barrier.hpp>
+#include <ringen/sequence_barrier_group.hpp>
 
 #include <algorithm>
 #include <chrono>
 #include <cstddef>
 #include <cassert>
 
-namespace disruptorplus
-{
+namespace ringen {  
     /// \brief
     /// A claim strategy for use where only a single thread will be publishing
     /// items to a ring buffer.
@@ -37,7 +35,7 @@ namespace disruptorplus
     template<typename WaitStrategy>
     class single_threaded_claim_strategy
     {
-    public:
+      public:
     
         /// \brief
         /// Initialise the claim strategy.
@@ -516,5 +514,3 @@ namespace disruptorplus
     };
     
 }
-
-#endif

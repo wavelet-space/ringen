@@ -1,7 +1,7 @@
 #ifndef DISRUPTORPLUS_BLOCKING_WAIT_STRATEGY_HPP_INCLUDED
 #define DISRUPTORPLUS_BLOCKING_WAIT_STRATEGY_HPP_INCLUDED
 
-#include <disruptorplus/sequence.hpp>
+#include <ringen/sequence.hpp>
 
 #include <atomic>
 #include <cassert>
@@ -9,7 +9,7 @@
 #include <condition_variable>
 #include <mutex>
 
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// A wait_strategy that blocks waiting threads using a until the respective

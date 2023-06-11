@@ -1,12 +1,12 @@
-#ifndef DISRUPTORPLUS_RING_BUFFER_HPP_INCLUDED
-#define DISRUPTORPLUS_RING_BUFFER_HPP_INCLUDED
+#pragma once
 
-#include <disruptorplus/sequence.hpp>
+#include <ringen/sequence.hpp>
 
 #include <memory>
 #include <cassert>
+#include <concepts>
 
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// A ring buffer is a buffer of size power-of-two that can
@@ -23,7 +23,8 @@ namespace disruptorplus
     /// \tparam T
     /// The type of elements the ring buffer.
     /// This type must be default-constructible.
-    template<typename T>
+    template<std::default_initializable T>
+    
     class ring_buffer
     {
     public:
@@ -100,5 +101,3 @@ namespace disruptorplus
     
     };
 }
-
-#endif

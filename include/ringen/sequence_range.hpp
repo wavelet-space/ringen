@@ -1,9 +1,8 @@
-#ifndef DISRUPTORPLUS_SEQUENCE_RANGE_HPP_INCLUDED
-#define DISRUPTORPLUS_SEQUENCE_RANGE_HPP_INCLUDED
+#pragma once
 
-#include <disruptorplus/sequence.hpp>
+#include <ringen/sequence.hpp>
 
-namespace disruptorplus
+namespace ringen
 {
     /// \brief
     /// A sequence range represents a contiguous range of sequence numbers.
@@ -72,5 +71,3 @@ namespace disruptorplus
         
     };
 }
-
-#endif

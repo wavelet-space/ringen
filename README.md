@@ -1,8 +1,6 @@
-Disruptor++
-===========
+# Ringen
 
-Disruptor++ is a C++11 header-only implementation of the 'disruptor' data structure used
-to communicate between threads in a high-performance producer/consumer arrangement.
+Ringen is a C++20 header-only implementation of the 'disruptor' data structure used to communicate between threads in a high-performance producer/consumer arrangement.
 
 See the LMAX [technical paper](https://lmax-exchange.github.io/disruptor/files/Disruptor-1.0.pdf)
 for a description of the theory behind the disruptor.
@@ -10,8 +8,7 @@ for a description of the theory behind the disruptor.
 See the [Java LMAX Disruptor project](http://lmax-exchange.github.io/disruptor/) for
 more resources relating to the disruptor.
 
-Description
------------
+## Description
 
 A disruptor data structure is essentially a ring buffer that uses different cursors
 to keep track of where consumers or producers have processed up to.
@@ -38,25 +35,23 @@ Also, this implementation does not make use of abstract interfaces or virtual fu
 calls, which can inhibit inlining and incur additional runtime overhead, but instead
 prefers to use templates for compile-time polymorphism.
 
-Performance
------------
+## Performance
 
 TODO: Put some performance results in here.
 
-Synopsis
---------
+## Synopsis
 
 A single producer/single consumer use of a disruptor for communication.
 
-```
-#include <disruptorplus/ring_buffer.hpp>
-#include <disruptorplus/single_threaded_claim_strategy.hpp>
-#include <disruptorplus/spin_wait_strategy.hpp>
-#include <disruptorplus/sequence_barrier.hpp>
+```cpp
+#include <ringen/ring_buffer.hpp>
+#include <ringen/single_threaded_claim_strategy.hpp>
+#include <ringen/spin_wait_strategy.hpp>
+#include <ringen/sequence_barrier.hpp>
 
 #include <thread>
 
-using namespace disruptorplus;
+using namespace ringen;
 
 struct Event
 {
@@ -128,22 +123,20 @@ int main()
 }
 ```
 
-License
--------
+## License
 
-The Discruptor++ library is available under the MIT open source license.
+The Ringen library is available under the MIT open source license.
 See LICENSE.txt for details.
 
-Building
---------
+## Building
 
 As this library is a header-only library there is no library component
 that needs to be built separately. Simply add the include/ directory
 to your include path and include the appropriate headers.
 
 If you want to build the samples/tests then you can use the
-[Cake](https://github.com/lewissbaker/cake) build system to build
+[CMake](https://cmake.org/) build system to build
 this code.
 
-Once you have installed cake you can simply run 'cake' in the root
+Once you have installed cake you can simply run `cmake` in the root
 directory to build everything.

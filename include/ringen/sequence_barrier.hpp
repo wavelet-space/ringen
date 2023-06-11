@@ -1,13 +1,12 @@
-#ifndef DISRUPTORPLUS_SEQUENCE_BARRIER_HPP_INCLUDED
-#define DISRUPTORPLUS_SEQUENCE_BARRIER_HPP_INCLUDED
+#pragma once
 
-#include <disruptorplus/config.hpp>
-#include <disruptorplus/sequence.hpp>
+#include <ringen/config.hpp>
+#include <ringen/sequence.hpp>
 
 #include <atomic>
 #include <chrono>
 
-namespace disruptorplus
+namespace ringen
 {
     template<typename WaitStrategy>
     class sequence_barrier_group;
@@ -207,5 +206,3 @@ namespace disruptorplus
         
     };
 }
-
-#endif

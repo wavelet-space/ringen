@@ -1,12 +1,12 @@
-#include <disruptorplus/ring_buffer.hpp>
-#include <disruptorplus/single_threaded_claim_strategy.hpp>
-#include <disruptorplus/spin_wait_strategy.hpp>
-#include <disruptorplus/sequence_barrier.hpp>
+#include <ringen/ring_buffer.hpp>
+#include <ringen/single_threaded_claim_strategy.hpp>
+#include <ringen/spin_wait_strategy.hpp>
+#include <ringen/sequence_barrier.hpp>
 
 #include <iostream>
 #include <thread>
 
-using namespace disruptorplus;
+using namespace ringen;
 
 struct Event
 {
