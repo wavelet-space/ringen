@@ -12,7 +12,7 @@ struct event {
 };
 
 int main() {
-  constexpr size_t buffer_size = 1024;  // Must be power-of-two!
+  constexpr size_t buffer_size = 1024; // Must be power-of-two!
 
   ring_buffer<event> buffer(buffer_size);
 
@@ -30,29 +30,29 @@ int main() {
     sequence_t nextToRead = 0;
     bool done = false;
 
-    while(!done) {
+    while (!done) {
       // Wait until more items are available.
       sequence_t available = claim_strategy.wait_until_published(nextToRead);
 
       // Process all available items in a batch
       do {
-        auto& event = buffer[nextToRead];
+        auto &event = buffer[nextToRead];
         sum += event.data;
-        if(event.data == 0) {
+        if (event.data == 0) {
           done = true;
         }
-      } while(nextToRead++ != available);
+      } while (nextToRead++ != available);
 
       // Notify producer we've finished consuming items.
       consumed.publish(available);
 
-      std::cout << "sum is " << sum << std::endl;  // Where to move print?
+      std::cout << "sum is " << sum << std::endl; // Where to move print?
     }
   });
 
   // The producer thread lambda function.
   std::thread producer([&]() {
-    for(uint32_t i = 1; i <= 1'000'000; ++i) {
+    for (uint32_t i = 1; i <= 1'000'000; ++i) {
       // Claim a slot in the ring buffer, waits if buffer is full.
       sequence_t seq = claim_strategy.claim_one();
 
