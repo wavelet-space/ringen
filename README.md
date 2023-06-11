@@ -1,10 +1,10 @@
 # Ringen
 
-Ringen is a C++20 header-only implementation of the 'disruptor' data structure used to communicate between threads in a high-performance producer/consumer arrangement.
+**Ringen is a C++20 header-only implementation of the disruptor pattern used to communicate between threads in a high-performance producer/consumer arrangement.**
 
-See the LMAX [technical paper](https://lmax-exchange.github.io/disruptor/files/Disruptor-1.0.pdf) for a description of the theory behind the disruptor.
-
-See the [Java LMAX Disruptor project](http://lmax-exchange.github.io/disruptor/) for more resources relating to the disruptor.
+- See the LMAX [technical paper](https://lmax-exchange.github.io/disruptor/files/Disruptor-1.0.pdf) for a description of the theory behind the disruptor.
+- See the [Java LMAX Disruptor project](http://lmax-exchange.github.io/disruptor/) for more resources relating to the disruptor.
+- See the [Martin Fowler's article](https://martinfowler.com/articles/lmax.html) about LMAX architecture.
 
 ## Description
 
