@@ -27,7 +27,7 @@ target_compile_features(Ringen INTERFACE cxx_std_20)
 
 add_executable(
   example1
-  examples/example1.cpp
+  example/example1.cpp
 )
 
 target_include_directories(
