@@ -1,1 +1,1 @@
-# Example 1
+# Example 1: single producer, single consumer

@@ -5,10 +5,10 @@
 - See the LMAX [technical paper](https://lmax-exchange.github.io/disruptor/files/Disruptor-1.0.pdf) for a description of the theory behind the disruptor.
 - See the [Java LMAX Disruptor project](http://lmax-exchange.github.io/disruptor/) for more resources relating to the disruptor.
 - See the [Martin Fowler's article](https://martinfowler.com/articles/lmax.html) about LMAX architecture.
-
+ 
 ## Description
 
-A disruptor data structure is essentially a ring buffer that uses different cursors to keep track of where consumers or producers have processed up to.
+A disruptor data structure is essentially a circular buffer queue ring buffer that uses different cursors to keep track of where consumers or producers have processed up to.
 
 A disruptor can be used with either single producer thread or multiple producer
 threads. Multiple producer threads are able to publish items out-of-sequence
