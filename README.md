@@ -144,3 +144,15 @@ directory to build everything.
     cmake --build build --target example2
     ...
     ```
+
+- Format source code.
+
+    ```shell
+    clang-format -i .\include\ringen\*.hpp .\examples\*.cpp
+    ```
+
+- Lint source code.
+
+    ```shell
+    clang-tidy ...
+    ```

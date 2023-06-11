@@ -34,7 +34,7 @@ namespace ringen {
     /** A type that is a const-reference to a ring buffer element. */
     using const_reference = const T&;
 
-    /** 
+    /**
      * Constructs a ring buffer of a specified size.
      *
      * Allocates the buffer on the heap and default-constructs all
@@ -87,4 +87,4 @@ namespace ringen {
 
     std::unique_ptr<T[]> m_data;
   };
-}
+}  // namespace ringen

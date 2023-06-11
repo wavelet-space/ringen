@@ -46,13 +46,13 @@ int main() {
       // Notify producer we've finished consuming items.
       consumed.publish(available);
 
-      std::cout << "sum is " << sum << std::endl; // Where to move print?   
+      std::cout << "sum is " << sum << std::endl;  // Where to move print?
     }
   });
 
   // The producer thread lambda function.
   std::thread producer([&]() {
-    for(uint32_t i = 1; i <= 1'000'000 ; ++i) {
+    for(uint32_t i = 1; i <= 1'000'000; ++i) {
       // Claim a slot in the ring buffer, waits if buffer is full.
       sequence_t seq = claim_strategy.claim_one();
 
