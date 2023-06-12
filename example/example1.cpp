@@ -17,12 +17,12 @@ int main() {
   ring_buffer<event> buffer(buffer_size);
 
   spin_wait_strategy wait_strategy;
-  sequence_barrier<spin_wait_strategy> consumed(wait_strategy);
+  sequence_barrier<spin_wait_strategy> barrier(wait_strategy);
 
   single_threaded_claim_strategy<spin_wait_strategy> claim_strategy(
       buffer_size, wait_strategy);
 
-  claim_strategy.add_claim_barrier(consumed);
+  claim_strategy.add_claim_barrier(barrier);
 
   // The consumer thread lambda function.
   std::thread consumer([&]() {
@@ -33,7 +33,7 @@ int main() {
     while (!done) {
       // Wait until more items are available.
       sequence_t available = claim_strategy.wait_until_published(next_to_read);
-      
+
       // Process all available items in a batch.
       do {
         auto &event = buffer[next_to_read];
@@ -42,10 +42,11 @@ int main() {
           done = true;
         }
       } while (next_to_read++ != available);
-      
+
       // Notify producer we've finished consuming items.
-      consumed.publish(available);
-      std::cout << "consumed: sum = " << sum << std::endl; // Where to move print?
+      barrier.publish(available);
+      std::cerr << "consumer: sum = " << sum
+                << "\r"; //  TODO Move print outside?
     }
   });
 
@@ -59,7 +60,6 @@ int main() {
       // Publish the event to the consumer.
       claim_strategy.publish(sequence);
       // std::cout << "produced: data = " <<  i << std::endl;
-
     }
     // Publish the terminating event.
     sequence_t sequence = claim_strategy.claim_one();
