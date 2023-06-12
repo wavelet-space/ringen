@@ -24,11 +24,7 @@ When used with a single producer thread with the spin wait-strategy the disrupto
 
 This implementation of the disruptor data-structure is defined fully in header files. There are no libraries to link against and many functions should be able to be inlined. Also, this implementation does not make use of abstract interfaces or virtual function calls, which can inhibit inlining and incur additional runtime overhead, but instead prefers to use templates for compile-time polymorphism.
 
-## Performance
-
-*Put some performance results in here.*
-
-## Synopsis
+## Examples
 
 - [Example1](http://www.wavelet.space/ringen/example1.html): A single producer/single consumer use of a disruptor for communication.
 
@@ -47,6 +43,10 @@ If you want to build the samples/tests then you can use the
 
 Once you have installed cake you can simply run `cmake` in the root
 directory to build everything.
+
+## Performance
+
+*Put some performance results in here.*
 
 ## Development
 
