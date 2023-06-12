@@ -30,7 +30,7 @@ This implementation of the disruptor data-structure is defined fully in header f
 
 ## Synopsis
 
-- [Example1](./examples/example1.cpp): A single producer/single consumer use of a disruptor for communication.
+- [Example1](http://www.wavelet.space/ringen/example1.html): A single producer/single consumer use of a disruptor for communication.
 
 ## License
 
