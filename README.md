@@ -50,6 +50,8 @@ directory to build everything.
 
 ## Development
 
+![dependecy graph](./graph.svg)
+
 - Generate documentation with Sphinx.
 
     ```shell
